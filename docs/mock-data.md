@@ -10,6 +10,7 @@ A small fake client emits the notification types from `docs/realtime-and-states.
 
 ## Mock users (fake logins)
 - Patient: Adam Test, patient@example.test. Hospital staff: Amina Staff. Hospital admin: Musa Admin (2FA on).
+- Emails: patient@example.test, staff@example.test (hospital 1), admin@example.test (hospital 1, 2FA on). Any other email signs in as the patient.
 - Every email code and 2FA code is 123456. Any password of 8 or more characters works, except "wrongpass1", which returns the 400 error.
 
 ## Mock hospitals (names follow the design; area-centre coordinates are approximate; beds are invented)
@@ -31,6 +32,16 @@ Grace O., 29, 2 people, high fever, YELLOW, pending. John E., 33, deep cut, GREE
 ## Mock errors to cover
 401 then a successful refresh. 429 after five logins in a minute. 409 when accepting a case another hospital took.
 400 validation with a fields object. A plain-text success body. No hospital available (409).
+
+## Mock triggers (implemented in `packages/shared/src/mocks/handlers.ts`)
+- Login with "wrongpass1": 400. Sixth login within a minute: 429 (plain text).
+- Register with a bad email or a password under 8: 400 with a fields object. Register success: plain text.
+- Access tokens last 2 minutes, so the next call gets 401 and the client refreshes once.
+- Accepting Grace O. (assignment 904): 409, another hospital took it.
+- SOS with "no hospital" in the description: 409, no hospital available.
+- After any SOS, EMERGENCY_ACCEPTED arrives on the patient socket after 8 seconds.
+- Hospital side: `simulateIncomingEmergency()` from `@ems/shared/mocks` adds a pending case and sends EMERGENCY_ASSIGNED.
+- Each app has its own mock data (different origins), see decisions-and-gaps D15.
 
 ## What mocks cannot prove (test these on the real backend)
 - The login refresh cookie across the real domains, and CORS.

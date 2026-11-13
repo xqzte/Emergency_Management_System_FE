@@ -21,11 +21,11 @@ Screen numbers refer to the design PDF (see `docs/design-system.md`).
 - [x] Urgency colour codes are already in `docs/design-system.md`
 - [x] Design tokens and shared components: urgency badge, distance text, buttons, inputs, cards (screen 1)
 ## Day 2
-- [ ] API client with token refresh, error handling, plain-text responses
-- [ ] WebSocket client with reconnect and the connection status line
-- [ ] Patient PWA shell over HTTPS (manifest, service worker, placeholder logo and icons from the style sheet)
-- [ ] Mock API with MSW and sample data from `docs/mock-data.md`, switched by one environment variable
-- [ ] Try every needed endpoint against the real backend and note differences in `docs/decisions-and-gaps.md`
+- [x] API client with token refresh, error handling, plain-text responses
+- [x] WebSocket client with reconnect and the connection status line
+- [x] Patient PWA shell over HTTPS (manifest, service worker, placeholder logo and icons from the style sheet)
+- [x] Mock API with MSW and sample data from `docs/mock-data.md`, switched by one environment variable
+- [ ] BLOCKED until a hosted dev backend exists (Q1, D13): Try every needed endpoint against the real backend and note differences in `docs/decisions-and-gaps.md`
 ## Day 3
 - [ ] Patient: onboarding (10), register (11), verify code (12), login (6), reset password (13)
 ## Day 4 (M1 report)
@@ -60,3 +60,4 @@ Screen numbers refer to the design PDF (see `docs/design-system.md`).
 ## Progress log
 (one line per day: date, what is done, what is blocked)
 - Fri 13 Nov, Day 1: npm workspaces monorepo (Next 16, Tailwind 4, ESLint, Vitest), shared tokens, UrgencyBadge, DistanceText, Button, Input, Card, /style page in both apps; lint, test, build green. First push done; Day 1 closed (travel-time fallback set to 5 min per km, D11).
+- Fri 13 Nov, Day 2: API client (memory token, refresh-once on 401, 429, plain text, forbidden-path guard), STOMP/SockJS socket with reconnect and status line, MSW mock API and mock socket, patient PWA shell (manifest, icons, service worker, offline page, HTTPS dev script); 31 tests, lint, build green; committed and pushed. Blocked: real backend check waits for a hosted dev backend (D13).

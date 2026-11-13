@@ -13,7 +13,10 @@ Next.js (App Router) with TypeScript, TanStack Query, Tailwind CSS using the tok
 STOMP over SockJS for the WebSocket. English only. Show times in West Africa Time (Africa/Lagos).
 
 ## Commands (run from the repo root)
-- `npm run dev:patient` (port 3000), `npm run dev:hospital` (port 3001), `npm run build`, `npm run lint`, `npm test`
+- `npm run dev:patient` (port 3001), `npm run dev:hospital` (port 3002), `npm run build`, `npm run lint`, `npm test`
+- Port 3000 is taken on the dev machine: always run the patient app on port 3001 (the hospital app uses 3002).
+- `npm run dev:patient:https` (HTTPS dev, port 3001), `npm run preview:pwa` (production build with mocks off, port 3001, to test the PWA)
+- Mocks are on by default (`NEXT_PUBLIC_USE_MOCKS=true` in `apps/*/.env`). Override in `.env.local`.
 
 ## Where to look (read the file before building the related screen; do not import them all)
 - `docs/build-plan.md`: the 15-day task list. Work from here.

@@ -11,13 +11,17 @@
     "dev:hospital": "npm run dev -w @ems/hospital",
     "build": "npm run build -w @ems/patient && npm run build -w @ems/hospital",
     "lint": "eslint .",
-    "test": "npm run test -w @ems/shared"
+    "test": "npm run test -w @ems/shared",
+    "dev:patient:https": "npm run dev:https -w @ems/patient",
+    "preview:pwa": "npm run preview:pwa -w @ems/patient"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.5",
     "@types/node": "^26.6.6",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
+    "@types/sockjs-client": "^1.5.4",
+    "cross-env": "^10.1.0",
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.4.6",
     "tailwindcss": "^4.3.5",

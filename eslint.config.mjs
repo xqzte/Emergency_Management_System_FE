@@ -8,7 +8,7 @@ const config = [
     settings: { next: { rootDir: ["apps/patient/", "apps/hospital/"] } },
   },
   {
-    ignores: ["**/node_modules/**", "**/.next/**", "**/out/**", "**/next-env.d.ts"],
+    ignores: ["**/node_modules/**", "**/.next/**", "**/out/**", "**/next-env.d.ts", "**/public/mockServiceWorker.js"],
   },
 ];
 
