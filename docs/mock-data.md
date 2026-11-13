@@ -21,7 +21,7 @@ A small fake client emits the notification types from `docs/realtime-and-states.
 | 4 | Asokoro Medical Centre | Asokoro | 9.0388, 7.5200 | PRIVATE | 1 / 15 |
 | 5 | Gwarinpa Community Hospital | Gwarinpa | 9.1107, 7.4029 | PUBLIC | 9 / 50 |
 | 6 | Central District Hospital | Central District | 9.0560, 7.4890 | FEDERAL | 20 / 120 |
-Patient test location: 9.0579, 7.4951. Distance is a straight-line estimate; time is about 3 minutes per km.
+Patient test location: 9.0579, 7.4951. Distance is a straight-line estimate; time is about 5 minutes per km (D11).
 Hospital 4 is full-ish and hospital 6 is large, so the nearby list shows variety.
 
 ## Mock cases for the hospital board (hospital 1)

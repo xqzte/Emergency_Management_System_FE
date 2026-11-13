@@ -13,8 +13,10 @@ describe("formatDistance", () => {
   });
 
   it("estimates minutes when the API gives none", () => {
-    expect(formatDistance(2)).toBe("2.0 km ~6 min");
-    expect(formatDistance(0.999)).toBe("1.0 km ~3 min");
+    expect(formatDistance(2)).toBe("2.0 km ~10 min");
+    expect(formatDistance(1.2)).toBe("1.2 km ~6 min");
+    expect(formatDistance(0.8)).toBe("800 m ~4 min");
+    expect(formatDistance(0.999)).toBe("1.0 km ~5 min");
   });
 
   it("handles bad input", () => {

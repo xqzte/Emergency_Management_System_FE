@@ -17,7 +17,7 @@ Screen numbers refer to the design PDF (see `docs/design-system.md`).
 ## Before Day 1 (a 5 minute task, from a phone)
 - [ ] Message Yusuf with the two asks (hosted dev backend and a super admin login). Not blocking: ideal by Fri 20 Nov, latest Tue 24 Nov (Day 10). Answers go in `docs/decisions-and-gaps.md`
 ## Day 1
-- [ ] Repo set up, first push, workspaces, lint, build
+- [x] Repo set up, first push, workspaces, lint, build
 - [x] Urgency colour codes are already in `docs/design-system.md`
 - [x] Design tokens and shared components: urgency badge, distance text, buttons, inputs, cards (screen 1)
 ## Day 2
@@ -59,4 +59,4 @@ Screen numbers refer to the design PDF (see `docs/design-system.md`).
 
 ## Progress log
 (one line per day: date, what is done, what is blocked)
-- Fri 13 Nov, Day 1: npm workspaces monorepo (Next 16, Tailwind 4, ESLint, Vitest), shared tokens, UrgencyBadge, DistanceText, Button, Input, Card, /style page in both apps; lint, test, build green. First push waits for approval; distance-time rule is Q7.
+- Fri 13 Nov, Day 1: npm workspaces monorepo (Next 16, Tailwind 4, ESLint, Vitest), shared tokens, UrgencyBadge, DistanceText, Button, Input, Card, /style page in both apps; lint, test, build green. First push done; Day 1 closed (travel-time fallback set to 5 min per km, D11).

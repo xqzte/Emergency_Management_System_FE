@@ -1,8 +1,8 @@
 /**
- * Fallback travel time when the API gives no duration.
- * docs/mock-data.md: "time is about 3 minutes per km". See decisions-and-gaps Q7.
+ * Fallback travel time when the API gives no duration (mock data).
+ * 5 min per km matches the design examples. See decisions-and-gaps D11.
  */
-export const FALLBACK_MINUTES_PER_KM = 3;
+export const FALLBACK_MINUTES_PER_KM = 5;
 
 /**
  * Distance format from the design: `1.2 km ~6 min`, under 1 km in metres: `800 m ~4 min`.

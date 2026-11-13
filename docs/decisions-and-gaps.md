@@ -11,6 +11,8 @@
 - D9 Mock data first: MSW answers API calls from the contract. The real backend is used from Day 10 (Tue 24 Nov).
 - D8 English only. SUPER_ADMIN screens are out of scope.
 - D10 Day 1 setup: Next.js 16.4 (Turbopack), React 19, Tailwind 4 with tokens in `packages/shared/src/styles/tokens.css`, one root ESLint config, Vitest in shared. Patient runs on port 3000, hospital on 3001. Urgency colours live only in `packages/shared/src/components/UrgencyBadge.tsx`.
+- D11 Travel time: use routing `estimatedDurationMinutes` whenever the API returns it. Otherwise (mock data, missing duration) estimate 5 minutes per km to match the design examples (`1.2 km ~6 min`, `800 m ~4 min`). Set by `FALLBACK_MINUTES_PER_KM` in `packages/shared/src/lib/distance.ts`. Answers Q7.
+- D12 The 7 moderate `npm audit` warnings in dev-only lint packages (@typescript-eslint, via eslint-config-next) are accepted. They do not ship to users. Never run `npm audit fix --force`; recheck when eslint-config-next updates. Answers Q8.
 
 ## Design versus backend gaps (handle as written)
 - G1 Admin overview 7-day charts: no daily history endpoint. Build the counts in the browser from the assignments list (assignedAt).
@@ -28,5 +30,5 @@
 - Q4 Emergency phone number for the offline screen (design says "your local emergency number"; 112 is proposed). Decide later.
 - Q5 Where to deploy (host and domain) and who owns it. Decide on Day 13.
 - Q6 Does the project manager accept a 30 Nov finish, ahead of December?
-- Q7 Travel time when the API gives no duration: `docs/mock-data.md` says about 3 min per km, but the design examples (`1.2 km ~6 min`, `800 m ~4 min`) imply 5 min per km. Using 3 min per km (`FALLBACK_MINUTES_PER_KM` in `packages/shared/src/lib/distance.ts`) until decided; routing `estimatedDurationMinutes` is used whenever present.
-- Q8 `npm audit` shows 7 moderate warnings in dev-only lint packages (@typescript-eslint, via eslint-config-next). Not shipped to users; recheck when eslint-config-next updates.
+- Q7 Travel time when the API gives no duration. ANSWERED Fri 13 Nov: 5 minutes per km, API duration first. See D11.
+- Q8 `npm audit` warnings in dev-only lint packages. ANSWERED Fri 13 Nov: accepted, no `--force` fix. See D12.
