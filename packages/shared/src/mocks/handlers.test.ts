@@ -1,6 +1,14 @@
 import { setupServer } from "msw/node";
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
-import { login, verifyTwoFactor } from "../api/auth";
+import {
+  forgotPassword,
+  login,
+  registerPatient,
+  resendOtp,
+  resetPassword,
+  verifyOtp,
+  verifyTwoFactor,
+} from "../api/auth";
 import { api } from "../api/client";
 import { getAccessToken, setAccessToken } from "../api/token";
 import type { Assignment, HospitalResponse, MeResponse } from "../api/types";
@@ -39,6 +47,19 @@ describe("mock API through the real client", () => {
     await expect(
       api.post("/auth/register", { fullName: "A", email: "bad", phoneNumber: "080", password: "short" }, { auth: false }),
     ).rejects.toMatchObject({ kind: "validation", fields: { email: expect.any(String), password: expect.any(String) } });
+  });
+
+  it("runs the sign-up and password reset helpers end to end", async () => {
+    await expect(
+      registerPatient({ fullName: "New Person", email: "new@example.test", phoneNumber: "08011111111", password: "password1" }),
+    ).resolves.toMatch(/Registration successful/);
+    await expect(verifyOtp("new@example.test", "000000")).rejects.toMatchObject({ status: 400 });
+    await expect(verifyOtp("new@example.test", "123456")).resolves.toMatch(/verified/i);
+    await expect(resendOtp("new@example.test")).resolves.toMatch(/new code/i);
+    await expect(forgotPassword("new@example.test")).resolves.toMatch(/reset code/i);
+    await expect(resetPassword("new@example.test", "123456", "short")).rejects.toMatchObject({ kind: "validation" });
+    await expect(resetPassword("new@example.test", "123456", "newpassword1")).resolves.toMatch(/reset successful/i);
+    expect((await login("new@example.test", "newpassword1")).role).toBe("PATIENT");
   });
 
   it("rejects wrongpass1 and rate limits the sixth login", async () => {

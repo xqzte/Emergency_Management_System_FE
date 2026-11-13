@@ -38,3 +38,5 @@
 - Q8 `npm audit` warnings in dev-only lint packages. ANSWERED Fri 13 Nov: accepted, no `--force` fix. See D12.
 - Q9 Shapes the contract does not spell out; the types in `packages/shared/src/api/types.ts` are assumptions marked "assumed". Confirm in Swagger on Day 10: the EmergencyRequest object (POST /emergency/request response, my-requests), the POST /auth/verify-2fa response (assumed same as login), the hospital-contact response, and whether /notifications/my/unread/count returns a bare number.
 - Q10 For Day 10: the backend must allow CORS with credentials from http://localhost:3001 (patient) and http://localhost:3002 (hospital), on the gateway (8080) and the notification service (8084). Port 3000 is taken on the dev machine.
+- Q11 What does POST /auth/login return for an account whose email is not verified yet? The patient login shows the backend's message as it is; confirm the wording and status in Swagger on Day 10, and whether to send the user to the verify screen instead.
+- Q12 Phone number format for register (Nigerian 080... or +234...?). The patient form only checks that it is not empty and shows the backend's field message. Confirm on Day 10.

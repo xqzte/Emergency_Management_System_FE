@@ -27,7 +27,7 @@ Screen numbers refer to the design PDF (see `docs/design-system.md`).
 - [x] Mock API with MSW and sample data from `docs/mock-data.md`, switched by one environment variable
 - [ ] BLOCKED until a hosted dev backend exists (Q1, D13): Try every needed endpoint against the real backend and note differences in `docs/decisions-and-gaps.md`
 ## Day 3
-- [ ] Patient: onboarding (10), register (11), verify code (12), login (6), reset password (13)
+- [x] Patient: onboarding (10), register (11), verify code (12), login (6), reset password (13)
 ## Day 4 (M1 report)
 - [ ] Hospital: sign in (21), admin code (22), register hospital with pending state (23), role-based routing
 ## Day 5
@@ -61,3 +61,4 @@ Screen numbers refer to the design PDF (see `docs/design-system.md`).
 (one line per day: date, what is done, what is blocked)
 - Fri 13 Nov, Day 1: npm workspaces monorepo (Next 16, Tailwind 4, ESLint, Vitest), shared tokens, UrgencyBadge, DistanceText, Button, Input, Card, /style page in both apps; lint, test, build green. First push done; Day 1 closed (travel-time fallback set to 5 min per km, D11).
 - Fri 13 Nov, Day 2: API client (memory token, refresh-once on 401, 429, plain text, forbidden-path guard), STOMP/SockJS socket with reconnect and status line, MSW mock API and mock socket, patient PWA shell (manifest, icons, service worker, offline page, HTTPS dev script); 31 tests, lint, build green; committed and pushed. Blocked: real backend check waits for a hosted dev backend (D13).
+- Fri 13 Nov, Day 3: patient onboarding (10), register (11), verify code (12), login with 2FA step (6), reset password (13), session restore from the refresh cookie, shared auth calls (register, verify, resend, forgot, reset) with a test; 37 tests, lint, build green. Not done: real backend check (still D13).
