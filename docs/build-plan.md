@@ -19,7 +19,7 @@ Screen numbers refer to the design PDF (see `docs/design-system.md`).
 ## Day 1
 - [ ] Repo set up, first push, workspaces, lint, build
 - [x] Urgency colour codes are already in `docs/design-system.md`
-- [ ] Design tokens and shared components: urgency badge, distance text, buttons, inputs, cards (screen 1)
+- [x] Design tokens and shared components: urgency badge, distance text, buttons, inputs, cards (screen 1)
 ## Day 2
 - [ ] API client with token refresh, error handling, plain-text responses
 - [ ] WebSocket client with reconnect and the connection status line
@@ -59,3 +59,4 @@ Screen numbers refer to the design PDF (see `docs/design-system.md`).
 
 ## Progress log
 (one line per day: date, what is done, what is blocked)
+- Fri 13 Nov, Day 1: npm workspaces monorepo (Next 16, Tailwind 4, ESLint, Vitest), shared tokens, UrgencyBadge, DistanceText, Button, Input, Card, /style page in both apps; lint, test, build green. First push waits for approval; distance-time rule is Q7.

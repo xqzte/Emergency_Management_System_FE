@@ -12,8 +12,8 @@ Two apps in one repository. The backend is already built and is not ours to chan
 Next.js (App Router) with TypeScript, TanStack Query, Tailwind CSS using the tokens in `docs/design-system.md`,
 STOMP over SockJS for the WebSocket. English only. Show times in West Africa Time (Africa/Lagos).
 
-## Commands (update when the repo exists)
-- `npm run dev`, `npm run build`, `npm run lint`, `npm test`
+## Commands (run from the repo root)
+- `npm run dev:patient` (port 3000), `npm run dev:hospital` (port 3001), `npm run build`, `npm run lint`, `npm test`
 
 ## Where to look (read the file before building the related screen; do not import them all)
 - `docs/build-plan.md`: the 15-day task list. Work from here.

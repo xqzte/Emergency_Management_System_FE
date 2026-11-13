@@ -1,0 +1,27 @@
+{
+  "name": "quicksave-ems-fe",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev:patient",
+    "dev:patient": "npm run dev -w @ems/patient",
+    "dev:hospital": "npm run dev -w @ems/hospital",
+    "build": "npm run build -w @ems/patient && npm run build -w @ems/hospital",
+    "lint": "eslint .",
+    "test": "npm run test -w @ems/shared"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.5",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.6",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^6.0.3",
+    "vitest": "^5.1.0"
+  }
+}
